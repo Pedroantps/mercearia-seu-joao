@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace mercearia_seu_joao.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica interna para frmMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class frmMenu : Window
     {
-        public MainWindow()
+        public frmMenu()
         {
             InitializeComponent();
-        }
-
-        private void clicar1(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show(
-                "Consulte o seu gerente.",
-                "Informação",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
         }
     }
 }
