@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,43 +8,43 @@ using MySqlConnector;
 
 public class ConsultaUsuario
 {
- 
-    public static Usuario BuscaDados(string email, string senha)
+    public static Usuario ObterUsuarioPeloEmailSenha(string email, string senha)
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
-        Usuario usuario = new Usuario();
+        Usuario usuario = null;
 
         try
         {
             conexao.Open();
             var comando = conexao.CreateCommand();
-            comando.CommandText = @"SELECT * FROM Usuario WHERE email = @email AND senha = @senha;";
-            comando.Parameters.AddWithValue("@email", email);
+            comando.CommandText = @"Select * from Usuario Where email = @email and senha = @senha";
             comando.Parameters.AddWithValue("@senha", senha);
+            comando.Parameters.AddWithValue("@email", email);
             var leitura = comando.ExecuteReader();
+
             while (leitura.Read())
             {
+                usuario = new Usuario();
                 usuario.id = leitura.GetInt32("id");
-                usuario.nome = leitura.GetString("nome");
                 usuario.email = leitura.GetString("email");
                 usuario.senha = leitura.GetString("senha");
-                usuario.tipoUsuario = leitura.GetString("tipoUsuario");
-                usuario.dataHoraInsercao = leitura.GetDateTime("dataHoraInsercao");
-                usuario.dataHoraExclusao = leitura.GetDateTime("dataHoraExclusao");
+                break;
             }
+        }
 
-        }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            Console.WriteLine(ex.Message);
+            Console.WriteLine(e.Message);
         }
+
         finally
         {
-            if (conexao.State == System.Data.ConnectionState.Open)
+            if (conexao.State == ConnectionState.Open)
             {
                 conexao.Close();
             }
         }
+
         return usuario;
     }
 }

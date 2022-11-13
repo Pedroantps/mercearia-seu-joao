@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="frmMenu" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Sair" HorizontalAlignment="Left" Margin="662,328,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair"/>
+        <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="165,180,0,0" VerticalAlignment="Top" Height="43" Width="97" Click="Button_Produto"/>
+        <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Left" Margin="372,180,0,0" VerticalAlignment="Top" Height="43" Width="97" Click="Button_Usuario"/>
+        <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="574,180,0,0" VerticalAlignment="Top" Height="43" Width="98" Click="Button_Venda"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="60,401,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>

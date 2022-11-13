@@ -30,6 +30,19 @@ namespace mercearia_seu_joao.View
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
+
+        private bool Verifica()
+        {
+            if (txt_InserirEmail.Text != "" && txt_InserirSenha.Password != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void ClicarBotao(object sender, RoutedEventArgs e)
         {
             if (Verifica() == true)
@@ -37,7 +50,7 @@ namespace mercearia_seu_joao.View
 
                 string email = txt_InserirEmail.Text;
                 string senha = txt_InserirSenha.Password;
-                Usuario usuario = clasUsu.BuscarDados(email, senha);
+                Usuario usuario = cUsuario.ObterUsuarioPeloEmailSenha(email, senha);
                 if (usuario != null)
                 {
                     frmMenu frmMenu = new frmMenu();
@@ -57,16 +70,6 @@ namespace mercearia_seu_joao.View
             }
         }
     
-        private bool Verifica()
-        {
-            if (txt_InserirEmail.Text != "" && txt_InserirSenha.Password != "")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
     }
 }
