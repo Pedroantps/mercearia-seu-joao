@@ -8,14 +8,14 @@
         Title="frmLogin" Height="450" Width="700"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <Grid>
-        <Image HorizontalAlignment="Left" Height="117" Margin="289,34,0,0" VerticalAlignment="Top" Width="118" Source="/perfil-de-usuario.png"/>
-        <TextBlock x:Name="txtEmail" HorizontalAlignment="Left" Margin="257,169,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Height="20" Width="40" TextAlignment="Justify" />
+    <Grid Background="#FF656273">
+        <Image HorizontalAlignment="Left" Height="117" Margin="289,34,0,0" VerticalAlignment="Top" Width="118" Source="/perfil-de-usuario.png" OpacityMask="#FFD8F171"/>
+        <TextBlock x:Name="txtEmail" HorizontalAlignment="Left" Margin="257,169,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Height="20" Width="40" TextAlignment="Justify" Foreground="#FFD8F171" FontWeight="Bold" />
         <TextBox x:Name="txt_InserirEmail" HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" Margin="257,0,0,0" TextAlignment="Justify"/>
-        <TextBlock x:Name="txtSenha" HorizontalAlignment="Left" Margin="257,240,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top" Height="20" Width="40" TextAlignment="Justify" />
-        <TextBlock x:Name="txt_EsqSenha" HorizontalAlignment="Left" Margin="257,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" MouseLeftButtonDown="clicar1" TextAlignment="Justify"><Run Language="pt-br" Text="Esqueceu a senha?"/><LineBreak/><Run Language="pt-br"/></TextBlock>
+        <TextBlock x:Name="txtSenha" HorizontalAlignment="Left" Margin="257,240,0,0" TextWrapping="Wrap" Text="Senha" VerticalAlignment="Top" Height="20" Width="40" TextAlignment="Justify" Foreground="#FFD8F171" FontWeight="Bold" />
+        <TextBlock x:Name="txt_EsqSenha" HorizontalAlignment="Left" Margin="257,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" MouseLeftButtonDown="clicar1" TextAlignment="Justify" Foreground="#FFD8F171" FontWeight="Bold"><Run Language="pt-br" Text="Esqueceu a senha?"/><LineBreak/><Run Language="pt-br"/></TextBlock>
         <PasswordBox x:Name="txt_InserirSenha" HorizontalAlignment="Left" Margin="257,260,0,0" VerticalAlignment="Top" Width="182" Height="35"/>
-        <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Left" Margin="296,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.118,0.67" Height="37" Width="104" Click="ClicarBotao"
+        <Button x:Name="btnEntrar" Content="Entrar" HorizontalAlignment="Left" Margin="296,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.118,0.67" Height="37" Width="104" Click="ClicarBotao" Background="#FFD8F171"
                 />
 
     </Grid>

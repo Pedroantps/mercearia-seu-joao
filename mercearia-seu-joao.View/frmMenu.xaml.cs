@@ -28,7 +28,6 @@ namespace mercearia_seu_joao.View
         {
             InitializeComponent();
             usuario = usuarioLogado;
- 
         }
 
 

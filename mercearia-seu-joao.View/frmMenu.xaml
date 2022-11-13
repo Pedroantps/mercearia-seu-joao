@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:mercearia_seu_joao.View"
         mc:Ignorable="d"
         Title="frmMenu" Height="450" Width="800">
-    <Grid>
-        <Button Content="Sair" HorizontalAlignment="Left" Margin="662,328,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair"/>
-        <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="165,180,0,0" VerticalAlignment="Top" Height="43" Width="97" Click="Button_Produto"/>
-        <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Left" Margin="372,180,0,0" VerticalAlignment="Top" Height="43" Width="97" Click="Button_Usuario"/>
-        <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="574,180,0,0" VerticalAlignment="Top" Height="43" Width="98" Click="Button_Venda"/>
+    <Grid Background="#FF656273">
+        <Button Content="Sair" HorizontalAlignment="Left" Margin="662,328,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair" Background="#FFD8F171"/>
+        <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Produto" Background="#FFD8F171"/>
+        <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Center" Margin="0,195,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Usuario" Background="#FFD8F171"/>
+        <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="562,195,0,0" VerticalAlignment="Top" Height="58" Width="141" Click="Button_Venda" Background="#FFD8F171"/>
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="60,401,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>

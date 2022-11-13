@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mercearia_seu_joao.View"
         mc:Ignorable="d"
-        Title="FrmProduto" Height="450" Width="800">
-    <Grid>
-        
+        Title="frmProduto" Height="296" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF656273">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Controle de Produtos" VerticalAlignment="Top" FontSize="18" Width="248" TextAlignment="Center" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" Text="Id:" VerticalAlignment="Top" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" Text="Nome:" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Width="95" Foreground="#FFD8F171" FontWeight="Bold"><Run Text="Preço Unitário"/><Run Language="pt-br" Text=":"/><LineBreak/><Run Language="pt-br"/></TextBlock>
+        <TextBox x:Name="txtprecoUnitario" HorizontalAlignment="Left" Margin="140,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,178,0,0" TextWrapping="Wrap" Text="Quantidade:" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" PreviewTextInput="txtQtd_PreviewTextInput"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,178,0,0" TextWrapping="Wrap" Text="Fornecedor:" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Width="83" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBox x:Name="txtFornecedor" HorizontalAlignment="Left" Margin="140,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="60" Click="NovoProduto" Background="#FFD8F171"/>
+        <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="75,231,0,0" VerticalAlignment="Top" Width="60" Click="AlterarProduto" Background="#FFD8F171"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="140,231,0,0" VerticalAlignment="Top" Width="60" Click="ExcluirProduto" Background="#FFD8F171"/>
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="205,231,0,0" VerticalAlignment="Top" Width="60" Click="LimparCampos" Background="#FFD8F171"/>
+        <DataGrid x:Name="dgvProdutos" HorizontalAlignment="Left" Width="530" Margin="270,30,0,0" IsReadOnly="True" AutoGenerateColumns="False" MouseDoubleClick="PegarItemNoGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="Id"/>
+                <DataGridTextColumn Binding="{Binding nome}" Header="Nome"/>
+                <DataGridTextColumn Binding="{Binding quantidade}" Header="Quantidade"/>
+                <DataGridTextColumn Binding="{Binding precoUnitario}" Header="Preço Unitário"/>
+                <DataGridTextColumn Binding="{Binding fornecedor}" Header="Fornecedor"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Right" Margin="0,5,10,0" VerticalAlignment="Top" Width="49" Click="Sair" Background="#FFD8F171"/>
     </Grid>
 </Window>
