@@ -17,7 +17,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="140,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Width="95" Foreground="#FFD8F171" FontWeight="Bold"><Run Text="Preço Unitário"/><Run Language="pt-br" Text=":"/><LineBreak/><Run Language="pt-br"/></TextBlock>
         <TextBox x:Name="txtprecoUnitario" HorizontalAlignment="Left" Margin="140,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,178,0,0" TextWrapping="Wrap" Text="Quantidade:" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Foreground="#FFD8F171" FontWeight="Bold"/>
-        <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" PreviewTextInput="txtQtd_PreviewTextInput"/>
+        <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Margin="10,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
         <TextBlock HorizontalAlignment="Left" Margin="140,178,0,0" TextWrapping="Wrap" Text="Fornecedor:" VerticalAlignment="Top" RenderTransformOrigin="0.487,0.504" Width="83" Foreground="#FFD8F171" FontWeight="Bold"/>
         <TextBox x:Name="txtFornecedor" HorizontalAlignment="Left" Margin="140,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
         <Button x:Name="btnNovo" Content="Novo" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="60" Click="NovoProduto" Background="#FFD8F171"/>

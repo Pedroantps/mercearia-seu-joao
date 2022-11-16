@@ -105,6 +105,7 @@ namespace mercearia_seu_joao.View
             if (txtId.Text != "")
             {
                 int id = int.Parse(txtId.Text);
+                string dataHoraExclusao = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
                 MessageBoxResult result = MessageBox.Show(
                 $"Deseja excluir o produto de id:{id} ?",
                 "Excluir o produto",
@@ -112,7 +113,7 @@ namespace mercearia_seu_joao.View
                 MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    bool foiExcluido = ConsultaProduto.ExcluirProduto(id);
+                    bool foiExcluido = ConsultaProduto.ExcluirProduto(id, dataHoraExclusao);
                     if (foiExcluido == true)
                     {
                         MessageBox.Show(
@@ -153,11 +154,13 @@ namespace mercearia_seu_joao.View
         }
         private void AdicionaProduto()
         {
+            string dataHoraInclusao = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             bool foiInserido = ConsultaProduto.InserirProduto(
                 txtNome.Text,
                 int.Parse(txtQtd.Text),
                 float.Parse(txtprecoUnitario.Text),
-                txtFornecedor.Text);
+                txtFornecedor.Text,
+                dataHoraInclusao);
             if(foiInserido == true)
             {
                 MessageBox.Show(
@@ -190,9 +193,5 @@ namespace mercearia_seu_joao.View
             Application.Current.Shutdown();
         }
 
-        private void txtQtd_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-
-        }
     }
 }

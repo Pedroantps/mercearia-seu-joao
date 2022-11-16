@@ -19,24 +19,35 @@ namespace mercearia_seu_joao.View
     /// </summary>
     public partial class frmMenu : Window
     {
-        Usuario usuario;
         public frmMenu()
         {
             InitializeComponent();
-        }
-        public frmMenu(Usuario usuarioLogado)
-        {
-            InitializeComponent();
-            usuario = usuarioLogado;
+
         }
 
+        public frmMenu(string tipoUsuario)
+        {
+            InitializeComponent();
+            bool tipoEncontrado = cUsuario.ObterTipoUsuario(tipoUsuario);
+            if (tipoEncontrado == true)
+            {
+                if (tipoUsuario == "caixa")
+                {
+                    btnUsuario.IsEnabled = false;
+                    btnProduto.IsEnabled = false;
+                }
+                if (tipoUsuario == "gerente")
+                {
+                    btnVenda.IsEnabled = false;
+                }
+            }
+            
+        }
 
         private void Button_Produto(object sender, RoutedEventArgs e)
         {
-
             FrmProduto frmProduto = new FrmProduto();
             frmProduto.Show();
-
         }
         private void Button_Usuario(object sender, RoutedEventArgs e)
         {
@@ -55,10 +66,10 @@ namespace mercearia_seu_joao.View
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtNome_TextChanged(object sender, TextChangedEventArgs e)
         {
             string datadehoje = DateTime.Now.ToString(" d MMMM 'de' yyyy");
-            txtNome.Text = $"Olá  , hoje é dia {datadehoje}.";
+            txtNome.Text = $"Olá , hoje é dia {datadehoje}.";
         }
     }
 }

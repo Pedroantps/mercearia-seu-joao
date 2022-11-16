@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mercearia_seu_joao.View"
         mc:Ignorable="d"
-        Title="frmMenu" Height="450" Width="800">
+        Title="frmMenu" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
     <Grid Background="#FF656273">
-        <Button Content="Sair" HorizontalAlignment="Left" Margin="662,328,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair" Background="#FFD8F171"/>
-        <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Produto" Background="#FFD8F171"/>
-        <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Center" Margin="0,195,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Usuario" Background="#FFD8F171"/>
-        <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="562,195,0,0" VerticalAlignment="Top" Height="58" Width="141" Click="Button_Venda" Background="#FFD8F171"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="60,401,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="689,329,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair" Background="#FFD8F171" FontSize="16"/>
+        <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="88,219,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Produto" Background="#FFD8F171" FontSize="16"/>
+        <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="571,219,0,0" VerticalAlignment="Top" Height="58" Width="141" Click="Button_Venda" Background="#FFD8F171" FontSize="16"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Center" Margin="0,382,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" TextChanged="txtNome_TextChanged" Height="74" Background="{x:Null}" FontSize="20" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Center" Height="288" VerticalAlignment="Top" Width="354" Source="/1.png" Margin="0,-30,0,0"/>
+        <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Usuario" Background="#FFD8F171" FontSize="16"/>
 
     </Grid>
 </Window>

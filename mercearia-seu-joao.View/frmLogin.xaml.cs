@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,10 +26,10 @@ namespace mercearia_seu_joao.View
         private void clicar1(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show(
-                "Consulte o seu gerente.",
-                "Informação",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            "Consulte o seu gerente.",
+            "Informação",
+            MessageBoxButton.OK,
+            MessageBoxImage.Information);
         }
 
         private bool Verifica()
@@ -39,6 +40,11 @@ namespace mercearia_seu_joao.View
             }
             else
             {
+                MessageBox.Show(
+                "Preencha todos os campos!",
+                "Atenção",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
                 return false;
             }
         }
@@ -56,10 +62,11 @@ namespace mercearia_seu_joao.View
                     frmMenu frmMenu = new frmMenu();
                     frmMenu.Show();
                     Close();
+
                 }
                 else
                 {
-                    MessageBoxResult result = MessageBox.Show(
+                    MessageBox.Show(
                     "Dados incorretos!",
                     "Atenção",
                     MessageBoxButton.OK,

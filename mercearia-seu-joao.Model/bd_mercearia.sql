@@ -34,5 +34,5 @@ FOREIGN KEY(idProduto) references Produto(id)
 );
 
 INSERT INTO Usuario(nome, email, senha, tipoUsuario, dataHoraInsercao) 
-VALUES ('Rodolfo', 'rodolfo@gmail.com', 'R0dolfo@', 'gerente', '2022-11-09 13:00:00'),
-('Victor Hugo', 'victorhugo@gmail.com', 'VictorHug0@', 'caixa', '2022-11-09 13:00:00');
+VALUES ('Rodolfo', 'rodolfo@gmail.com', '2b7af07d140b1473b5330e7f5f024b9c', 'gerente', '2022-11-09 13:00:00'),
+('Victor Hugo', 'victorhugo@gmail.com', '94638b16549125c7511e1f067905634f', 'caixa', '2022-11-09 13:00:00');

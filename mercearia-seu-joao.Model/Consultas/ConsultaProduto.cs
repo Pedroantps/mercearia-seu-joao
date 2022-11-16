@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 public class ConsultaProduto
 {
-    public static bool InserirProduto(string nome, int quantidade, float precoUnitario, string fornecedor)
+    public static bool InserirProduto(string nome, int quantidade, float precoUnitario, string fornecedor, string dataHoraInsercao)
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         bool foiInserido = false;
@@ -18,12 +18,13 @@ public class ConsultaProduto
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-            INSERT INTO Produto (nome, quantidade, precoUnitario, fornecedor) 
-            VALUES (@nome, @quantidade, @precoUnitario, @fornecedor)";
+            INSERT INTO Produto (nome, quantidade, precoUnitario, fornecedor, dataHoraInsercao) 
+            VALUES (@nome, @quantidade, @precoUnitario, @fornecedor, @dataHoraInsercao)";
             comando.Parameters.AddWithValue("@nome", nome);
             comando.Parameters.AddWithValue("@quantidade", quantidade);
             comando.Parameters.AddWithValue("@precoUnitario", precoUnitario);
             comando.Parameters.AddWithValue("@fornecedor", fornecedor);
+            comando.Parameters.AddWithValue("@dataHoraInsercao", dataHoraInsercao);
             var leitura = comando.ExecuteReader();
             foiInserido = true;
         }
@@ -41,7 +42,7 @@ public class ConsultaProduto
         return foiInserido;
     }
 
-    public static bool ExcluirProduto(int id)
+    public static bool ExcluirProduto(int id, string dataHoraExclusao)
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         bool foiExcluido = false;
@@ -51,8 +52,11 @@ public class ConsultaProduto
             conexao.Open();
             var comando = conexao.CreateCommand();
             comando.CommandText = @"
-            DELETE FROM Produto WHERE id = @id;";
+            UPDATE Produto
+            SET dataHoraExclusao = @dataHoraExclusao
+            WHERE id = @id;";
             comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@dataHoraExclusao", dataHoraExclusao);
             var leitura = comando.ExecuteReader();
             foiExcluido = true;
         }
@@ -106,6 +110,7 @@ public class ConsultaProduto
     }
     public static List<Produto> ObterTodosProdutos()
     {
+
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         List<Produto> listaDeProdutos = new List<Produto>();
 
