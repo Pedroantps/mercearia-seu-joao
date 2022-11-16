@@ -10,8 +10,8 @@ public class cUsuario
     {
         return ConsultaUsuario.ObterTipoUsuario(tipoUsuario);
     }
-    public static Usuario ObterUsuarioPeloEmailSenha(string email, string senha)
+    public static Usuario ObterUsuarioPeloEmailSenha(string email, string senha, string tipoUsuario, string nome)
     {
-        return ConsultaUsuario.ObterUsuarioPeloEmailSenha(email, senha);
+        return ConsultaUsuario.ObterUsuarioPeloEmailSenha(email, senha, tipoUsuario, nome);
     }
 }

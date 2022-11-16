@@ -111,7 +111,7 @@ public class ConsultaUsuario
         }
         return listaDeUsuarios;
     }
-    public static Usuario ObterUsuarioPeloEmailSenha(string email, string senha)
+    public static Usuario ObterUsuarioPeloEmailSenha(string email, string senha, string tipoUsuario, string nome)
     {
         var conexao = new MySqlConnection(ConexaoBD.Connection.ConnectionString);
         Usuario usuario = null;
@@ -124,6 +124,8 @@ public class ConsultaUsuario
             comando.CommandText = @"Select * from Usuario Where email = @email and senha = @senha";
             comando.Parameters.AddWithValue("@senha", senhaCriptografada);
             comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@tipoUsuario", tipoUsuario);
+            comando.Parameters.AddWithValue("@nome", nome);
             var leitura = comando.ExecuteReader();
 
             while (leitura.Read())
@@ -132,6 +134,8 @@ public class ConsultaUsuario
                 usuario.id = leitura.GetInt32("id");
                 usuario.email = leitura.GetString("email");
                 usuario.senha = leitura.GetString("senha");
+                usuario.tipoUsuario = leitura.GetString("tipoUsuario");
+                usuario.nome = leitura.GetString("nome");
                 break;
             }
         }
@@ -166,6 +170,7 @@ public class ConsultaUsuario
 
             while (leitura.Read())
             {
+                
                 tipoEncontrado = true;
                 break;
             }

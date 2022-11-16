@@ -13,7 +13,7 @@
         <Button x:Name="btnSair" Content="Sair" HorizontalAlignment="Left" Margin="689,329,0,0" VerticalAlignment="Top" Height="48" Width="82" Click="Button_Sair" Background="#FFD8F171" FontSize="16"/>
         <Button x:Name="btnProduto" Content="Produtos" HorizontalAlignment="Left" Margin="88,219,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Produto" Background="#FFD8F171" FontSize="16"/>
         <Button x:Name="btnVenda" Content="Efetuar venda" HorizontalAlignment="Left" Margin="571,219,0,0" VerticalAlignment="Top" Height="58" Width="141" Click="Button_Venda" Background="#FFD8F171" FontSize="16"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Center" Margin="0,382,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" TextChanged="txtNome_TextChanged" Height="74" Background="{x:Null}" FontSize="20" Foreground="#FFD8F171" FontWeight="Bold"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Center" Margin="0,382,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" Height="74" Background="{x:Null}" FontSize="20" Foreground="#FFD8F171" FontWeight="Bold"/>
         <Image HorizontalAlignment="Center" Height="288" VerticalAlignment="Top" Width="354" Source="/1.png" Margin="0,-30,0,0"/>
         <Button x:Name="btnUsuario" Content="Usuários" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="58" Width="130" Click="Button_Usuario" Background="#FFD8F171" FontSize="16"/>
 

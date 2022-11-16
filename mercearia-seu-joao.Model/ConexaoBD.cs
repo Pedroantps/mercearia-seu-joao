@@ -15,7 +15,7 @@ public static class ConexaoBD
             {
                 Server = "127.0.0.1",
                 UserID = "root",
-                Password = "Pedroantps",
+                Password = "",
                 Database = "bd_mercearia"
             };
         }

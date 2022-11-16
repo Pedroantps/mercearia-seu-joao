@@ -19,29 +19,25 @@ namespace mercearia_seu_joao.View
     /// </summary>
     public partial class frmMenu : Window
     {
-        public frmMenu()
+        Usuario usuario;
+
+
+        public frmMenu(Usuario usuarioLogado, string tipoUsuario, string nome)
         {
             InitializeComponent();
-
-        }
-
-        public frmMenu(string tipoUsuario)
-        {
-            InitializeComponent();
-            bool tipoEncontrado = cUsuario.ObterTipoUsuario(tipoUsuario);
-            if (tipoEncontrado == true)
-            {
+            usuario = usuarioLogado;
                 if (tipoUsuario == "caixa")
                 {
                     btnUsuario.IsEnabled = false;
                     btnProduto.IsEnabled = false;
                 }
-                if (tipoUsuario == "gerente")
+                else
                 {
                     btnVenda.IsEnabled = false;
                 }
-            }
-            
+            string datadehoje = DateTime.Now.ToString("d MMMM 'de' yyyy");
+            txtNome.Text = $"Olá {nome}, hoje é dia {datadehoje}.";
+
         }
 
         private void Button_Produto(object sender, RoutedEventArgs e)
@@ -62,14 +58,12 @@ namespace mercearia_seu_joao.View
 
         private void Button_Sair(object sender, RoutedEventArgs e)
         {
+            
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
             Close();
-
         }
 
-        private void txtNome_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string datadehoje = DateTime.Now.ToString(" d MMMM 'de' yyyy");
-            txtNome.Text = $"Olá , hoje é dia {datadehoje}.";
-        }
+
     }
 }

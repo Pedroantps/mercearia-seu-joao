@@ -18,6 +18,7 @@ namespace mercearia_seu_joao.View
 {
     public partial class frmLogin : Window
     {
+
         public frmLogin()
         {
             InitializeComponent();
@@ -53,13 +54,19 @@ namespace mercearia_seu_joao.View
         {
             if (Verifica() == true)
             {
-
+                string nome = "";
+                string tipoUsuario = "";
                 string email = txt_InserirEmail.Text;
                 string senha = txt_InserirSenha.Password;
-                Usuario usuario = cUsuario.ObterUsuarioPeloEmailSenha(email, senha);
+                Usuario usuario = cUsuario.ObterUsuarioPeloEmailSenha(email, senha, tipoUsuario, nome);
+                string name = usuario.nome;
+                nome = name;
+                string tipo = usuario.tipoUsuario;
+                tipoUsuario = tipo;
                 if (usuario != null)
                 {
-                    frmMenu frmMenu = new frmMenu();
+
+                    frmMenu frmMenu = new frmMenu(usuario, tipoUsuario, nome);
                     frmMenu.Show();
                     Close();
 
